@@ -1,4 +1,5 @@
 from Heroe import Heroe
+from Mazmorra import Mazmorra
 
 
 def main():
