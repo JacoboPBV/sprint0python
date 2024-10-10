@@ -66,7 +66,7 @@ class Mazmorra:
                         seguir = True
                         
             enemigo.atacar(self.heroe)
-            if accion == 2: self.heroe.reset_defensa() #Si acción fue defenderse, reset_defensa()¡
+            if accion == 2: self.heroe.reset_defensa() #Si acción fue defenderse, reset_defensa()
             print()
 
         return not self.heroe.esta_vivo()
