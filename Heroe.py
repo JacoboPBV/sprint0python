@@ -1,10 +1,12 @@
 class Heroe:
+    #Atributos
     nombre:str
     ataque:int
     defensa:int
     salud:int
     salud_maxima:int
 
+    #Inicializamos los valores
     def __init__(self, nombre):
         self.nombre = nombre
         self.ataque = 12
@@ -13,17 +15,17 @@ class Heroe:
         self.salud = self.salud_maxima
 
     def atacar(self, enemigo):
-        salud_perdida = self.ataque - enemigo.defensa
+        salud_perdida = self.ataque - enemigo.defensa #Calculamos el daño antes de confirmarlo
 
         print("Héroe ataca a " + enemigo.nombre)
         if salud_perdida <= 0: print("El enemigo ha bloqueado el ataque")
         else:
             print("El enemigo " + enemigo.nombre + " ha recibido " + str(salud_perdida) + " puntos de daño.")
-            enemigo.salud -= salud_perdida
+            enemigo.salud -= salud_perdida #Le asignamos el daño una vez sepamos que es mayor que 0
 
     def curarse(self):
         salud_recuperada = 25
-        if self.salud + salud_recuperada > self.salud_maxima: self.salud = self.salud_maxima
+        if self.salud + salud_recuperada > self.salud_maxima: self.salud = self.salud_maxima #Si supera la vida máxima del héroe, se cura hasta su vida máxima
         else: self.salud += salud_recuperada
         print("Héroe se ha curado. Salud actual: " + str(self.salud))
 
